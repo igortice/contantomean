@@ -1,25 +1,28 @@
 {
-  "name"       : "contatomean",
-  "version"    : "1.0.0",
-  "description": "Contato MEAN",
-  "main"       : "index.js",
-  "scripts"    : {
+  "name"        : "contatomean",
+  "version"     : "1.0.0",
+  "description" : "Contato MEAN",
+  "main"        : "index.js",
+  "scripts"     : {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository" : {
+  "repository"  : {
     "type": "git",
     "url" : "git@github.com:igortice/contantomean.git"
   },
-  "keywords"   : [
+  "keywords"    : [
     "mongo",
     "express",
     "angular",
     "node"
   ],
-  "author"     : "igortice",
-  "license"    : "ISC",
-  "bugs"       : {
+  "author"      : "igortice",
+  "license"     : "ISC",
+  "bugs"        : {
     "url": "https://github.com/igortice/contantomean/issues"
   },
-  "homepage"   : "https://github.com/igortice/contantomean"
+  "homepage"    : "https://github.com/igortice/contantomean",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
 }
