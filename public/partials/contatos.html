@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col-md-6">
-    <h4>Contatos cadastrados: {{total}}</h4>
+    <h4>Contatos cadastrados: {{contatos.length}}</h4>
   </div>
   <div class="col-md-3 pull-right">
     <input type="search" ng-model="filtro" class="form-control" placeholder="pesquisar nome">
@@ -26,7 +26,7 @@
       </td>
       <td>{{contato.email}}</td>
       <td class="text-center">
-        <button class="btn btn-xs btn-warning">
+        <button class="btn btn-xs btn-warning" ng-click="remover(contato)">
           Remover
         </button>
       </td>

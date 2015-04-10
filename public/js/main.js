@@ -1,6 +1,7 @@
 angular
   .module('cm', [
-    'ngRoute'
+    'ngRoute',
+    'ngResource'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -9,7 +10,7 @@ angular
         templateUrl: 'partials/contatos.html',
         controller : 'ContatosController'
       })
-      .when('/contato/:contatoId', {
+      .when('/contatos/:contatoId', {
         templateUrl: 'partials/contato.html',
         controller : 'ContatoController'
       })

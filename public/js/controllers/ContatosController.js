@@ -1,17 +1,34 @@
 angular.module('cm').controller('ContatosController',
-  function ($scope) {
-    $scope.total = 0;
+  function ($scope, $resource) {
+    $scope.contatos = [];
+    $scope.filtro   = '';
 
-    $scope.contatos = [
-      {_id: 1, nome: 'Igor Rocha', email: 'cont1@empresa.com.br'},
-      {_id: 2, nome: 'Neto Oliveira', email: 'cont2@empresa.com.br'},
-      {_id: 3, nome: 'Gabriel Girão', email: 'cont3@empresa.com.br'}
-    ];
+    var Contatos = $resource('/contatos/:id');
 
-    $scope.filtro = '';
-
-    $scope.incrementar = function () {
-      $scope.total++;
+    function buscarContatos() {
+      Contatos.query(
+        function (contatos) {
+          $scope.contatos = contatos;
+        },
+        function (erro) {
+          console.log(erro);
+        });
     }
+
+    $scope.init = function () {
+      buscarContatos();
+    }
+
+    $scope.remover = function (contato) {
+      Contatos.delete(
+        {id: contato._id},
+        buscarContatos,
+        function (erro) {
+          console.log(erro);
+        }
+      );
+    };
+
+    $scope.init();
   })
 ;
