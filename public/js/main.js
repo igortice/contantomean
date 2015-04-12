@@ -1,6 +1,7 @@
 angular
   .module('cm', [
     'ngRoute',
-    'ngResource'
+    'ngResource',
+    'jlareau.pnotify'
   ])
 ;

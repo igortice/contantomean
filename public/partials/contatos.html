@@ -13,7 +13,11 @@
   </div>
 </div>
 
-<div class="table-responsive">
+<p class="text-info" ng-hide="contatos.length">
+  Não há contatos cadastrados.
+</p>
+
+<div class="table-responsive" ng-show="contatos.length">
   <table class="table table-hover">
     <tr>
       <td>NOME</td>
@@ -26,7 +30,7 @@
       </td>
       <td>{{contato.email}}</td>
       <td class="text-center">
-        <button class="btn btn-xs btn-warning" ng-click="remover(contato)">
+        <button class="btn btn-xs btn-warning" ng-disabled="contato.disabled" ng-click="remover(contato)" >
           Remover
         </button>
       </td>
