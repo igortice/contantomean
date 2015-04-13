@@ -2,16 +2,20 @@ var mongoose = require('mongoose');
 
 module.exports = function () {
   var scheme = mongoose.Schema({
-    nome : {
+    nome      : {
       type    : String,
       required: true
     },
-    email: {
+    email     : {
       type    : String,
       required: true,
       index   : {
         unique: true
       }
+    },
+    emergencia: {
+      type: mongoose.Schema.ObjectId,
+      ref : 'Contato'
     }
   });
 

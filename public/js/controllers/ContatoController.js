@@ -34,8 +34,16 @@ angular.module('cm').controller('ContatoController',
       }
     }
 
+    function initContatos () {
+      ContatoService.query(function (contatos) {
+        $scope.contatos = contatos;
+      });
+    }
+
     $scope.init = function () {
       checkRouteNewOrEdit();
+
+      initContatos();
     };
 
     $scope.init();
