@@ -1,6 +1,7 @@
 // config express
 var express = require('express');
 var app     = express();
+require('./config/database')('mongodb://localhost/contatomean');
 
 // config path
 var path = require('path');
@@ -8,7 +9,6 @@ var path = require('path');
 // config logger
 var logger = require('morgan');
 app.use(logger('dev'));
-
 
 // config body parser
 var bodyParser = require('body-parser');
