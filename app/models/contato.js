@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 module.exports = function () {
-  var scheme = mongoose.Schema({
+  var schema = mongoose.Schema({
     nome      : {
       type    : String,
       required: true
@@ -19,5 +19,5 @@ module.exports = function () {
     }
   });
 
-  return mongoose.model('Contato', scheme);
+  return mongoose.model('Contato', schema);
 };
