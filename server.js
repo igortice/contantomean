@@ -16,6 +16,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(require('method-override')());
 
+// config passport
+var cookieParser = require('cookie-parser');
+var session      = require('express-session');
+var passport     = require('passport');
+app.use(cookieParser());
+app.use(session({
+  secret           : 'pode ser qualquer secret',
+  resave           : true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 // middleware
 app.use(express.static(path.join(__dirname, 'public')));
 
