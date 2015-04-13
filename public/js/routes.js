@@ -1,4 +1,6 @@
 angular.module('cm')
+  .constant('CONTATOS_PATH', '/contatos')
+
   .config(function ($routeProvider) {
     $routeProvider
       .otherwise({ redirectTo: '/contatos' })

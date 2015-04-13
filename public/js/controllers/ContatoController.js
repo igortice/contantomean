@@ -1,7 +1,5 @@
 angular.module('cm').controller('ContatoController',
-  function ($scope, $resource, $routeParams, notificationService, $location, $timeout) {
-
-    var Contato = $resource('/contatos/:id');
+  function ($scope, $resource, $routeParams, notificationService, $location, $timeout, ContatoService) {
 
     $scope.salvar = function () {
       $scope.contato.$save()
@@ -21,7 +19,7 @@ angular.module('cm').controller('ContatoController',
 
     function checkRouteNewOrEdit () {
       if ($routeParams.contatoId) {
-        Contato.get(
+        ContatoService.get(
           { id: $routeParams.contatoId },
           function (contato) {
             $scope.contato = contato;
@@ -32,7 +30,7 @@ angular.module('cm').controller('ContatoController',
           }
         );
       } else {
-        $scope.contato = new Contato();
+        $scope.contato = new ContatoService();
       }
     }
 

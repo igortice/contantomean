@@ -1,12 +1,10 @@
 angular.module('cm').controller('ContatosController',
-  function ($scope, $resource, notificationService) {
+  function ($scope, $resource, notificationService, ContatoService) {
     $scope.contatos = [];
     $scope.filtro   = '';
 
-    var Contatos = $resource('/contatos/:id');
-
     function buscarContatos () {
-      Contatos.query(
+      ContatoService.query(
         function (contatos) {
           $scope.contatos = contatos;
         },
@@ -43,7 +41,7 @@ angular.module('cm').controller('ContatosController',
       }).get().on('pnotify.confirm', function () {
         contato.disabled = false;
         $scope.$apply();
-        Contatos.delete(
+        ContatoService.delete(
           { id: contato._id },
           function () {
             $scope.contatos.splice($scope.contatos.indexOf(contato), 1);
