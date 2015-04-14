@@ -3,6 +3,8 @@ module.exports = function (app) {
 
   var controller = {};
 
+  var sanitaze = require('mongo-sanitize');
+
   controller.contatos = function (req, res) {
     Contato.find().populate('emergencia').exec().then(
       function (contatos) {
@@ -17,7 +19,11 @@ module.exports = function (app) {
   controller.salvar = function (req, res) {
     var _id = req.body._id;
 
-    req.body.emergencia = req.body.emergencia || null;
+    var dados = {
+      'nome'      : req.body.nome,
+      'email'     : req.body.email,
+      'emergencia': req.body.emergencia || null
+    };
 
     if (_id) {
       Contato.findByIdAndUpdate(_id, req.body).exec()
@@ -41,7 +47,7 @@ module.exports = function (app) {
   };
 
   controller.contato = function (req, res) {
-    var _id = req.params.id;
+    var _id = sanitaze(req.params.id);
     Contato.findById(_id).exec()
       .then(function (contato) {
         if (!contato) throw new Error("Contato não encontrado.");
@@ -54,8 +60,8 @@ module.exports = function (app) {
   };
 
   controller.remover = function (req, res) {
-    var _id = req.params.id;
-    Contato.remove({ '_id': _id }).exec()
+    var _id = sanitaze(req.params.id);
+    Contato.remove({'_id': _id}).exec()
       .then(function () {
         res.status(204).end();
       }, function (erro) {
