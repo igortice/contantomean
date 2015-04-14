@@ -4,4 +4,7 @@ angular
     'ngResource',
     'jlareau.pnotify'
   ])
+  .config(function ($routeProvider, $httpProvider) {
+    $httpProvider.interceptors.push('myHttpInterceptor');
+  })
 ;

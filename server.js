@@ -1,7 +1,6 @@
 // config express
 var express = require('express');
 var app     = express();
-require('./config/database')('mongodb://localhost/contatomean');
 
 // config path
 var path = require('path');
@@ -75,3 +74,6 @@ app.use(function (err, req, res) {
 
 // export app
 module.exports = app;
+
+require('./config/passport')();
+require('./config/database')('mongodb://localhost/contatomean');
