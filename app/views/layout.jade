@@ -4,13 +4,15 @@ html(ng-app='cm')
     meta(name='viewport', content='width=device-width')
     meta(charset='UTF-8')
     title Contato MEAN
+    //-<!-- build:css test/compiled/style.min.css -->
     link(rel='stylesheet', href='vendor/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet', href='vendor/pnotify/pnotify.core.css')
     link(rel='stylesheet', href='vendor/pnotify/pnotify.buttons.css')
     link(rel='stylesheet', href='stylesheets/style.css')
+    //-<!-- endbuild -->
   body.container
     block content
-
+    //-<!-- build:js public/js/scripts.min.js -->
     script(src='vendor/jquery/dist/jquery.js')
     script(src='vendor/bootstrap/dist/js/bootstrap.min.js')
     script(src='vendor/pnotify/pnotify.core.js')
@@ -26,3 +28,4 @@ html(ng-app='cm')
     script(src='js/services/myHttpInterceptor.js')
     script(src='js/controllers/ContatosController.js')
     script(src='js/controllers/ContatoController.js')
+    //-<!-- endbuild -->
