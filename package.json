@@ -52,6 +52,10 @@
     "grunt-jade-usemin": "^0.11.1",
     "grunt-ng-annotate": "^0.10.0",
     "grunt-usemin": "^3.0.0",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.8",
+    "karma-jasmine": "^0.3.5",
     "matchdep": "^0.3.0",
     "usemin-patterns": "^0.1.4"
   }
