@@ -44,6 +44,9 @@
     "passport-github": "^0.1.5"
   },
   "devDependencies": {
+    "chai": "^2.2.0",
+    "chai-as-promised": "^5.0.0",
+    "cucumber": "^0.4.8",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.1",
@@ -58,6 +61,7 @@
     "karma-chrome-launcher": "^0.1.8",
     "karma-jasmine": "^0.3.5",
     "matchdep": "^0.3.0",
+    "mocha": "^2.2.4",
     "usemin-patterns": "^0.1.4"
   }
 }
