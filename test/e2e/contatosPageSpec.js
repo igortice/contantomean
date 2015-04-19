@@ -5,7 +5,7 @@ describe('Página Inicial', function () {
 
   beforeEach(function () {
     loginPage.visitar();
-    loginPage.logarGitHub('igortice@gmail.com', 'Da0644123');
+    loginPage.logarGitHub(process.env.GITHUB_USERNAME, process.env.GITHUB_PASSWORD);
   });
 
   it('Deve estar logado', function () {
