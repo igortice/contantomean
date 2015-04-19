@@ -13,7 +13,7 @@ block content
       #bs-example-navbar-collapse-5.collapse.navbar-collapse
         p.navbar-text.navbar-right
           | usuario:
-          a.navbar-link(href='#')= current_user.login
+          a.navbar-link#current_user(href='#')= current_user.login
           |  |
           a(href='/logout') sair
 
